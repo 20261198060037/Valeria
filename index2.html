@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Científico: Media Queries</title>
+    <style>
+        :root {
+            --primary: #2C3E50;
+            --accent: #E67E22;
+            --bg: #FAFAFA;
+            --text: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg);
+            color: var(--text);
+        }
+        .banner {
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 2px solid var(--primary);
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        header h1 { color: var(--primary); margin: 0; font-size: 2.5rem; }
+        header p { color: #666; font-style: italic; }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 5px solid var(--primary);
+            border-radius: 4px;
+        }
+        .card h3 { color: var(--accent); margin-top: 0; }
+        
+        .analogia {
+            background: #FFF3E0;
+            border-left-color: var(--accent);
+        }
+
+        /* Aplicação da própria Media Query para demonstrar o conceito */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .grid { grid-template-columns: 1fr; }
+            .card { border-left: none; border-top: 5px solid var(--primary); }
+            .analogia { border-top-color: var(--accent); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="banner">
+    <header>
+        <h1>Como a Web se Adapta: Desmistificando as Media Queries</h1>
+        <p>Autores: Nome do Estudante/Pesquisador &bull; Instituição de Ensino</p>
+    </header>
+
+    <div class="grid">
+        <div class="card">
+            <h3>01. O Problema Fundamental</h3>
+            <p>A diversidade de telas no ecossistema digital moderno exige que interfaces sejam fluidas. Exibir o mesmo layout estático em um monitor de 24" e em um smartphone de 5" prejudica a usabilidade e a acessibilidade.</p>
+        </div>
+
+        <div class="card analogia">
+            <h3>02. A Analogia da "Roupa Elástica"</h3>
+            <p>Imagine uma peça de roupa inteligente. Em vez de rasgar ou sobrar pano, ela detecta o corpo de quem a veste: expande os ombros para um atleta, encurta as mangas para uma criança e ajusta o tecido para o conforto térmico.</p>
+            <p><strong>Na Web:</strong> A "roupa" é o CSS. O "corpo" é o dispositivo. O tecido se reorganiza dinamicamente dependendo de onde é vestido.</p>
+        </div>
+
+        <div class="card">
+            <h3>03. A Ciência por Trás: Media Queries</h3>
+            <p>Media Queries atuam como os "sensores" dessa roupa. Elas interrogam o navegador sobre as propriedades do dispositivo (como largura, altura e orientação) e aplicam regras de estilo específicas baseadas na resposta.</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
